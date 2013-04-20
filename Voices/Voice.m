@@ -52,9 +52,9 @@
 	_deltaTheta = _freq / kSR;
 }
 
--(void)getSamplesForFreq:(Float64*)buffer:(UInt32)num_samples {
+-(void)getSamplesForFreq:(Float64*)buffer numFrames:(UInt32)numFrames {
 	
-	for (UInt32 i = 0; i < num_samples; ++i) {
+	for (UInt32 i = 0; i < numFrames; ++i) {
 		buffer[i] += _maxNoteAmp * [self getWaveTable:_theta] * [self getEnvelope];
 		_theta += _deltaTheta;
     }

@@ -35,7 +35,7 @@
 
 + (Float64)noteNumToFreq:(UInt8)note_num;
 
-- (void)getSamplesForFreq:(Float64*)buffer:(UInt32)num_samples;
+- (void)getSamplesForFreq:(Float64*)buffer numFrames:(UInt32)numFrames;
 - (Float64)getWaveTable:(Float64)index;
 
 

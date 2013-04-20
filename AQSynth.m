@@ -42,13 +42,13 @@
 //	Reverb_Release();
 }
 
--(void)fillAudioBuffer:(Float64*)buffer:(UInt32)num_samples {
+-(void)fillAudioBuffer:(Float64*)buffer numFrames:(UInt32)numFrames {
 	
     for (UInt8 i = 0; i < kNumberVoices; i++) {
         
         if (!changingSound && voice[i] != nil) {
             
-            [voice[i] getSamplesForFreq:buffer:num_samples];
+            [voice[i] getSamplesForFreq:buffer numFrames:numFrames];
         }
     }
 //	revmodel_process(buffer,num_samples,1);

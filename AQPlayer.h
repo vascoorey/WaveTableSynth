@@ -34,6 +34,6 @@
 - (OSStatus)stop;
 - (OSStatus)volumeLevel:(float)level;
 
-- (void)fillAudioBuffer:(Float64*)sampleBuffer:(UInt32)numFrames;
+- (void)fillAudioBuffer:(Float64*)buffer numFrames:(UInt32)numFrames;
 
 @end

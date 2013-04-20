@@ -22,10 +22,10 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
 	Float64 sampleBuffer[numFrames];
 	
 	memset(sampleBuffer,0,sizeof(Float64)*numFrames);
-	[aqp fillAudioBuffer:sampleBuffer:numFrames];
+	[aqp fillAudioBuffer:sampleBuffer numFrames:numFrames];
 
 	Float64 sample = 0.;	
-	for (UInt32 i = 0; i < numFrames; i++) {	
+	for (SInt32 i = 0; i < numFrames; i++) {
 		sample = sampleBuffer[i];
 		sample = sample > MAX_AMP ? MAX_AMP : sample < -MAX_AMP ? -MAX_AMP : sample;
 		((SInt16*)inAQBuffer->mAudioData)[i] = sample * (SInt16)0x7FFF;
@@ -106,7 +106,7 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
     return result;
 }
 
-- (void)fillAudioBuffer:(Float64*)buffer:(UInt32)numFrames {
+- (void)fillAudioBuffer:(Float64*)buffer numFrames:(UInt32)numFrames {
     
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
