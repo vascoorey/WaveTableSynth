@@ -29,7 +29,7 @@
         }
         //Set Envelope
         _attack = kSR * 0.05;
-        _release = kSR * 0;
+        _release = kSR * 0.01;
         _sustain = 1.0;
     
     }
