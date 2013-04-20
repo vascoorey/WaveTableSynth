@@ -27,6 +27,7 @@
 }
 
 - (void)on;
+- (void)on:(Float64)intensity;
 - (void)off;
 
 - (Float64)getEnvelope;

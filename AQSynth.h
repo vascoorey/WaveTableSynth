@@ -32,6 +32,7 @@
 
 #pragma mark - polyphonic methods
 - (void)midiNoteOn:(int)noteNum atVoiceIndex:(int)voiceIndex;
+- (void)midiNoteOn:(int)noteNum atVoiceIndex:(int)voiceIndex intensity:(Float64)intensity;
 - (void)changeMidiNoteToNoteNum:(int)noteNum atVoiceIndex:(int)voiceIndex;
 - (void)midiNoteOff:(int)noteNum atVoiceIndex:(int)voiceIndex;
 

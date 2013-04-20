@@ -25,6 +25,12 @@
 	_ampDelta = 1. / _attack;
 }
 
+- (void)on:(Float64)intensity
+{
+    intensity = (intensity > 1.0f) ? 1.0f : ((intensity < 0.0f) ? 0.0f : intensity);
+    _ampDelta = intensity / _attack;
+}
+
 - (void)off {
 	_ampDelta = -1. / _release;
 }

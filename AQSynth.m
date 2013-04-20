@@ -31,7 +31,7 @@
             
             Float64 amp = _volume * 0.01;
             //amp = log10f(amp);
-            NSLog(@"_volume: %d  amp: %f", _volume, amp);
+            //NSLog(@"_volume: %d  amp: %f", _volume, amp);
             [self volumeLevel:amp];
         }
     }
@@ -82,6 +82,12 @@
 
 }
 
+-(void)midiNoteOn:(int)noteNum atVoiceIndex:(int)voiceIndex intensity:(Float64)intensity
+{
+    voice[voiceIndex].freq = [Voice noteNumToFreq:noteNum];
+    [voice[voiceIndex] on:intensity];
+}
+
 - (void)changeMidiNoteToNoteNum:(int)noteNum atVoiceIndex:(int)voiceIndex
 {
     voice[voiceIndex].freq = [Voice noteNumToFreq:noteNum];
@@ -90,10 +96,11 @@
 
 - (void)midiNoteOff:(int)noteNum atVoiceIndex:(int)voiceIndex
 {
-    for (int i = 0 ; i < kNumberVoices; ++i) {
-        voice[i].freq = [Voice noteNumToFreq:noteNum];
-        [voice[i] off];
-    }
+//    for (int i = 0 ; i < kNumberVoices; ++i) {
+//        voice[i].freq = [Voice noteNumToFreq:noteNum];
+//        [voice[i] off];
+//    }
+    [voice[voiceIndex] off];
 }
 
 
