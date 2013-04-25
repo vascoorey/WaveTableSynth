@@ -22,7 +22,7 @@
     
     if (self) {
         for (UInt8 i = 0; i < kNumberVoices; i++) {
-            voice[i] = [[SinePiano alloc] init];
+            voice[i] = [[TriangleFlute alloc] init];
         }
     }
     return self;

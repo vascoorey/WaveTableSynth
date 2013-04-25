@@ -139,11 +139,11 @@
             self.voicesPlaying[voiceIndex] = @(0);
         }
     }
-    [self.voicesPlaying enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSNumber *note = (NSNumber *)obj;
-        printf("| %d: %d |", idx, [note intValue]);
-    }];
-    printf("\n");
+//    [self.voicesPlaying enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        NSNumber *note = (NSNumber *)obj;
+//        printf("| %d: %d |", idx, [note intValue]);
+//    }];
+//    printf("\n");
 }
 
 - (void)changeMidiNoteToNoteNum:(int)noteNum atVoiceIndex:(int)voiceIndex
